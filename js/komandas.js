@@ -3,20 +3,38 @@ const searchDropper = document.querySelector(".search-input");
 const inputBox = searchDropper.querySelector("input");
 const suggBox = searchDropper.querySelector(".autocom-box");
 const icon = searchDropper.querySelector(".icon");
-let linkTag = searchDropper.querySelector("a");
-let webLink;
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
-    let userData = e.target.value; //user enetered data
+    let userData = e.target.value; //user entered data
     let emptyArray = [];
-    if(userData){
+    if (userData >= 101 && userData <= 124) {
         icon.onclick = ()=>{
-            webLink = `https://www.google.com/search?q=${userData}`;/* te savienojas "300" ar attēlu lapu */
-            linkTag.setAttribute("href", webLink);
-            linkTag.click();
+            window.location.href = "1_stavs.html";
         }
+    }else if(userData >= 202 && userData <= 228){
+        icon.onclick = ()=>{
+            window.location.href = "2_stavs.html";
+        }
+
+    }else if(userData >= 302 && userData <= 331){
+        icon.onclick = ()=>{
+            window.location.href = "3_stavs.html";
+        }
+    }else if(userData >= 402 && userData <= 431){
+        icon.onclick = ()=>{
+            window.location.href = "4_stavs.html";
+        }
+    }else if(userData >= 502 && userData <= 533){
+        icon.onclick = ()=>{
+            window.location.href = "5_stavs.html";
+        }
+    }else if(userData >= 602 && userData <= 630){
+        icon.onclick = ()=>{
+            window.location.href = "6_stavs.html";
+        }
+    }else {
         emptyArray = suggestions.filter((data)=>{
-            //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
+            //filtering array value and user characters to lowercase and return only those words which are start with user entered chars
             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
         });
         emptyArray = emptyArray.map((data)=>{
@@ -30,7 +48,8 @@ inputBox.onkeyup = (e)=>{
             //adding onclick attribute in all li tag
             allList[i].setAttribute("onclick", "select(this)");
         }
-    }else{
+    }
+    if (!userData) {
         searchDropper.classList.remove("active"); //hide autocomplete box
     }
 }
@@ -38,9 +57,21 @@ function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
     icon.onclick = ()=>{
-        webLink = `https://www.google.com/search?q=${selectData}`;
-        linkTag.setAttribute("href", webLink);
-        linkTag.click();
+        if (selectData >= 101 && selectData <= 124) {
+            window.location.href = "1_stavs.html";
+        } else if(selectData >= 202 && selectData <= 228){
+            window.location.href = "2_stavs.html";
+        }else if(selectData >= 302 && selectData <= 331){
+            window.location.href = "3_stavs.html";
+        }else if(selectData >= 402 && selectData <= 431){
+            window.location.href = "4_stavs.html";
+        }else if(selectData >= 502 && selectData <= 533){
+            window.location.href = "5_stavs.html";
+        }else if(selectData >= 602 && selectData <= 630){
+            window.location.href = "6_stavs.html";
+        }else {
+            console.log(`Search for ${selectData}`);
+        }
     }
     searchDropper.classList.remove("active");
 }
