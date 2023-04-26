@@ -1,0 +1,10 @@
+# webpage
+
+Visas stāvu bildes uztaisītas dinamiskas
+2.stāvā izmēģinājuma poga (home) ar jaunu bibilotēku no nākošās saites
+https://www.w3schools.com/howto/howto_css_icon_buttons.asp
+iespējams būs mazliet jāsamaina kaks
+
+pie dizains.css ievietoti 2 papildus bloki, 
+.btn - taisa pogu
+.responsive - mērogo attēlu
