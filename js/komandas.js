@@ -3,19 +3,24 @@ const searchDropper = document.querySelector(".search-input");
 const inputBox = searchDropper.querySelector("input");
 const suggBox = searchDropper.querySelector(".autocom-box");
 const icon = searchDropper.querySelector(".icon");
+
+ 
+
+
+
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
     let userData = e.target.value; //user entered data
     let emptyArray = [];
-    if (userData >= 101 && userData <= 124) {
+    if (userData >= 101 && userData <= 630) {
         icon.onclick = ()=>{
             window.location.href = "1_stavs.html";
-        }
+            
+        }/*
     }else if(userData >= 202 && userData <= 228){
         icon.onclick = ()=>{
             window.location.href = "2_stavs.html";
         }
-
     }else if(userData >= 302 && userData <= 331){
         icon.onclick = ()=>{
             window.location.href = "3_stavs.html";
@@ -31,8 +36,9 @@ inputBox.onkeyup = (e)=>{
     }else if(userData >= 602 && userData <= 630){
         icon.onclick = ()=>{
             window.location.href = "6_stavs.html";
-        }
-    }else {
+        }*/
+    }
+    else {
         emptyArray = suggestions.filter((data)=>{
             //filtering array value and user characters to lowercase and return only those words which are start with user entered chars
             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
@@ -57,9 +63,9 @@ function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
     icon.onclick = ()=>{
-        if (selectData >= 101 && selectData <= 124) {
+        if (selectData >= 101 && selectData <= 630) {
             window.location.href = "1_stavs.html";
-        } else if(selectData >= 202 && selectData <= 228){
+        } /*else if(selectData >= 202 && selectData <= 228){
             window.location.href = "2_stavs.html";
         }else if(selectData >= 302 && selectData <= 331){
             window.location.href = "3_stavs.html";
@@ -69,7 +75,7 @@ function select(element){
             window.location.href = "5_stavs.html";
         }else if(selectData >= 602 && selectData <= 630){
             window.location.href = "6_stavs.html";
-        }else {
+        }*/else {
             console.log(`Search for ${selectData}`);
         }
     }
