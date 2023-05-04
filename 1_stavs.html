@@ -1,36 +1,75 @@
 <html>
 <head>
+
+  <title>1.stāvs</title>
   <link rel="stylesheet" href="dizains.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <title>1.stāvs</title>
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
 <body> 
+
   
+  <a href="rtu.html " style="text-decoration: none;" ><i text-decoration: none; class="fas fa-home" style="color: black;font-size:30px;"></i></a>
 <div class="dropper"> <!--krītošā izvēlne -->
   <div class="search-input">
     <a href="" target="_blank" hidden></a>
-    <input type="text" placeholder="Cits kabinets?">
+    <input type="text" placeholder="Cits kabinets?" >
     <div class="autocom-box">
       <!-- here list are inserted from javascript -->
     </div>
-    <div class="icon"><i class="fas fa-search"></i></div>
+    <div class="icon" ><i class="fas fa-search" ></i></div>
   </div>
 </div>
 
  <script src="js/saraksts.js"></script> 
  <script src="js/komandas.js"></script> 
-
+ <script src="js/test.js"></script> 
  <!--<p style="text-align: center;"><a href="#" class="btn primary">Meklēt</a></p>
  <br>-->
- <font size="5" COLOR=white> 
-    <label for="freeform">1.stāvs</label>
- </font> 
- <img src="https://github.com/NoHanded/webpage/blob/main/Bildes/floor1.png?raw=true" alt="floor1" class="responsive" width="500" height="350">
- <br>
+ 
+    <a id="result" ></a> .Kabinets
+    <script>
+      document.getElementById("result").innerHTML=localStorage.getItem("textvalue");
+
+    </script>
+
+
+ <div class="slider">
+  <div class="slides">
+    <!--radio buttons start-->
+    <input type="radio" name="radio-btn" id="radio1">
+    <input type="radio" name="radio-btn" id="radio2">
+    <!--radio buttons end-->
+    <!--slide images start-->
+    <div class="slide first">
+      <img src="https://github.com/NoHanded/webpage/blob/main/Bildes/floor1.png?raw=true" alt="">
+    </div>
+    <div class="slide">
+      <img src="https://github.com/NoHanded/webpage/blob/main/Bildes/floor3.png?raw=true" alt="">
+    </div>
+    <!--slide images end-->
+    <!--automatic navigation start-->
+    <div class="navigation-auto">
+      <div class="auto-btn1"></div>
+      <div class="auto-btn2"></div>
+    </div>
+    <!--automatic navigation end-->
+  </div>
+  <!--manual navigation start-->
+  <div class="navigation-manual">
+    <label for="radio1" class="manual-btn"></label>
+    <label for="radio2" class="manual-btn"></label>
+  </div>
+  <!--manual navigation end-->
+</div>
+<!--image slider end-->
+
+ 
+<br>
  <p style="text-align: center;"><a href="#" class="btn primary">Norādījumi</a></p>
 
 </body>
