@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dropper{ /* droppera izmēru info */
+  max-width: 450px;
+  margin: 20px auto;
+}
+.dropper .search-input{ /* izvēlnes dizains*/
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+}
+
+.search-input input{
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+.search-input.active input{
+  border-radius: 5px 5px 0 0;
+}
+
+.search-input .autocom-box{ /* izvēlnes izmēri */
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.search-input.active .autocom-box{ /* izvēlnes droppera rāmja izmēri*/
+  padding: 10px 8px;
+  opacity: 1; /* teksta caurspīdīgums*/
+  pointer-events: auto;
+}
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 5px;
+}
+.search-input.active .autocom-box li{
+  display: block;
+}
+.autocom-box li:hover{ /* izvēles iekrāsojums uz pc/ darbojas uz telefona?*/
+  background: #95b1b2;
+}
+
+.search-input .icon{
+  position: absolute;
+  right: -7px;
+  top: 17px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: black;
+  cursor: pointer;/* ja atstāj uz pc, maina kursoru */
+}
+
+.flag-lv {
+  width: 16px;
+  height: 16px;
+  background-image: url("https://ortus.rtu.lv/ResourceServingWebapp/rs/flags/16/Latvia.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.flag-en {
+  width: 16px;
+  height: 16px;
+  background-image: url('https://ortus.rtu.lv/ResourceServingWebapp/rs/flags/16/United Kingdom(Great Britain).png');
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.responsive { /*ekrāna ietekme uz attēlu*/
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.btn {
+  background-color: rgb(0, 0, 0); /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #005551;
+    height: 100vh;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  p { /* teksta centrējums */
+    text-align: center;
+    color: white;
+  }
+
+  a.btn {  /* search poga */
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.9);
+    background-color: #1a1a1a;
+  }
+
+  .search-box {
+    position: relative;
+    display: inline-block;
+  }  
+  .slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+  }
+  .slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+  }
+  
+  .slides input{
+    display: none;
+  }
+  
+  .slide{
+    width: 20%;
+    transition: 2s;
+  }.slide img{
+    width: 800px;
+    height: 500px;
+  }
+  
+  /*css manuālā pārvietošanās*/
+  
+  .navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .manual-btn{
+    border: 2px solid #005551;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  
+  .manual-btn:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  .manual-btn:hover{
+    background: #005551;
+  }
+  
+  #radio1:checked ~ .first{
+    margin-left: 0;
+  }
+  
+  #radio2:checked ~ .first{
+    margin-left: -20%;
+  }
+  
+  
+  /*auto pārvietošanās*/
+  
+  .navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+  }
+  
+  .navigation-auto div{
+    border: 2px solid #005551;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+  
+  .navigation-auto div:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  #radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #005551;
+  }
+  
+  #radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #005551;
+  }
