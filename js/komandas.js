@@ -4,10 +4,6 @@ const inputBox = searchDropper.querySelector("input");
 const suggBox = searchDropper.querySelector(".autocom-box");
 const icon = searchDropper.querySelector(".icon");
 
- 
-
-
-
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
     let userData = e.target.value; //user entered data
