@@ -1,5 +1,13 @@
 <html>
 <head>
+  <script>
+    function passvalues()
+    {
+      var firstname=document.getElementById("txt").value;
+      localStorage.setItem("textvalue",firstname);
+      return false;
+    }
+  </script>
   <link rel="stylesheet" href="dizains.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <title>RTU_klašu_meklēšana</title>
@@ -20,12 +28,15 @@
 
 <div class="dropper"> <!--krītošā izvēlne -->
   <div class="search-input">
-    <a href="" target="_blank" hidden></a>
-    <input type="text" placeholder="Apmaldījies??">
+    
+      <a href="" target="_blank"  hidden ></a>
+    <form action="1_stavs.html">
+      <input type="text" id="txt" placeholder="Apmaldījies??">
+  </form>
     <div class="autocom-box">
       <!-- here list are inserted from javascript -->
     </div>
-    <div class="icon"><i class="fas fa-search"></i></div>
+    <div class="icon" ><i class="fas fa-search" onclick="passvalues();"></i></div>
   </div>
 </div>
 
